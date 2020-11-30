@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   get 'pages/help'
 
   resources :users
+  
+  get     'users/new',  to: 'users#new'
+  
 end
