@@ -256,6 +256,15 @@ a img {
 	border-color: #2f2f2f;
 }
 
+.btn-black {
+  color: #565656;
+  border: 1px solid #565656;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 20px;
+  background-color: rgba(0,0,0,0.0);
+}
+
 /*	################################################################
 	5. PORTFOLIO STRUCTURE
 ################################################################# */
