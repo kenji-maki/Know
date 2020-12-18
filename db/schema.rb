@@ -12,18 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2020_12_01_083504) do
 
-  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "image"
-    t.string "description"
-    t.integer "place"
+  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "following_id"
+    t.integer "follower_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "following_id"
-    t.integer "follower_id"
+  create_table "topics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "image"
+    t.string "description"
+    t.integer "place"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
