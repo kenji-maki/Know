@@ -3,6 +3,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def edit
+  end
+
   def create
 
     @user = User.new(user_params)
@@ -14,9 +17,17 @@ class UsersController < ApplicationController
     end
   end
   
+  def update
+    @user = current_user.find(user_params)
+    if @user.update
+      redirect_to user_path(current_user), success:'更新に成功しました'
+    else
+      flash.now[:danger]="更新に失敗しました"
+    end
+  end
+
   private
   def user_params
-    params.require(:user).permit(:name, :email ,:password ,:password_confirmation)
+    params.require(:user).permit(:name, :email ,:password ,:password_confirmation ,:introduction)
   end
-  
 end
