@@ -6,6 +6,9 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def show
+  end
+
   def create
 
     @user = User.new(user_params)
@@ -18,8 +21,7 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = current_user.find(user_params)
-    if @user.update
+    if current_user.update(user_params)
       redirect_to user_path(current_user), success:'更新に成功しました'
     else
       flash.now[:danger]="更新に失敗しました"
