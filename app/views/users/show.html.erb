@@ -1,0 +1,24 @@
+<p>ユーザーの詳細ページです</p>
+
+<%= current_user.name %>
+<h>がログインしています。</h>
+
+<p>ユーザー情報</p>
+  <div>
+    <h>ユーザーID</h>
+    <h><%= current_user.id %></h>
+  </div>
+  <div>
+    <h>ユーザー名</h>
+    <h><%= current_user.name %></h>
+  </div>
+  <div>
+    <h>メールアドレス</h>
+    <h><%= current_user.email %></h>
+  </div>
+  <div>
+    <h>自己紹介文</h>
+    <h><%= current_user.introduction %></h>
+  </div>
+  
+<td><%= link_to 'Edit', edit_user_path(current_user) %></td>
